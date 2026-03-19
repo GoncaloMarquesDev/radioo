@@ -1,0 +1,76 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  background: #0f0f0f; 
+}
+.nav {
+  /* background-color: rgb(84, 83, 87); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.radioo-text {
+  @include heading-xl;
+  color: $color-primary;
+  font-size: 16px;
+}
+.search {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  height: 28px;
+  padding: 0 8px;
+  margin: 0 8px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon-radioo {
+  background-color: #3b82f6;
+
+  border-radius: 50%;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+}
+.icon-radio {
+  color: white;
+  font-size: large;
+  border: none;
+}
+.fm {
+  color: white;
+}
+.icon-right {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  height: 28px;
+  width: 28px;
+
+  /* margin: 0 8px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.icon-bell {
+  color: white;
+  font-size: normal;
+  border: none;
+}
