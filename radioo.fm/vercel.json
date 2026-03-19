@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/radio-api/(.*)",
+      "destination": "https://de1.api.radio-browser.info"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
