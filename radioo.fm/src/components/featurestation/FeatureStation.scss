@@ -1,0 +1,133 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.container-feature-banner {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 8px;
+  padding-left: 16px;
+  border-radius: 20px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 0.7) 30%,
+      rgba(0, 0, 0, 0.1) 75%
+    ),
+    var(--bg-image);
+
+  background-size: cover; /* Força a imagem a ocupar todo o espaço sem distorcer */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* IMPEDE a repetição que cria a linha */
+
+  transition: background-image 0.1s ease-in-out;
+
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+
+  overflow: visible;
+}
+.bottom-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.station-name {
+  @include header-title;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+.station-country {
+  @include body-s;
+  padding-left: 8px;
+  color: rgb(160, 160, 160);
+}
+.radioo-tags {
+  padding-left: 8px;
+  @include body-s;
+  color: $color-primary;
+  padding-top: 16px;
+}
+.radioo-votes {
+  padding-left: 8px;
+  @include body-s;
+  padding-bottom: 16px;
+}
+.bottom-info-right {
+  padding-right: 18px;
+}
+.radioo-play-btn {
+  @include text-btn;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+
+  // O SEGREDO ESTÁ AQUI:
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  svg {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* anuimacao skeleton */
+// 1. Definir a animação de brilho
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container-feature-banner.is-loading {
+  background: #1a1a1a; // Fundo neutro enquanto carrega
+  border: 1px solid #333;
+  max-height: 150px;
+  
+  // Estilo base para todos os elementos skeleton
+  [class^="skeleton-"] {
+    background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .skeleton-badge { width: 120px; height: 20px; border-radius: 20px; margin-bottom: 20px; }
+  .skeleton-title { width: 60%; height: 40px; margin-bottom: 12px; }
+  .skeleton-text  { width: 40%; height: 20px; }
+  
+  .skeleton-small-text { width: 80px; height: 14px; margin-top: 8px; }
+  .skeleton-button { 
+    width: 120px; 
+    height: 35px; 
+    border-radius: 12px;
+    margin-right: 18px;
+  }
+}
+
+
