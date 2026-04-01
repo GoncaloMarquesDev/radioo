@@ -6,7 +6,7 @@ import {
   FaMoon, 
 
   FaMicrophoneAlt
-} from "react-icons/fa"; // Importa tudo do mesmo pacote 'fa'
+} from "react-icons/fa";
 import React from "react";
 
 // 1. Definimos a interface aqui
@@ -17,7 +17,7 @@ export interface CategoryItem {
   icon: React.ReactNode;
 }
 
-// 2. Criamos o array usando essa interface
+
 export const CATEGORIES: CategoryItem[] = [
    { id: 'all', name: 'All', tag: '', icon: <FaMusic /> },
   { id: 'lofi', name: 'Lofi', tag: 'lofi', icon: <FaMoon /> }, // Tag muito forte na API

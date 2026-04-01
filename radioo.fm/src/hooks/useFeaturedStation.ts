@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getStationsByTag } from "../api/Stations";
+import { getTopStations } from "../api/Stations";
 import type { Station } from "../types/station";
 
 export function useFeaturedStation() {
@@ -8,7 +8,7 @@ export function useFeaturedStation() {
   useEffect(() => {
     
     async function loadStation() {
-      const stations = await getStationsByTag("lofi");
+      const stations = await getTopStations(50);
 
       const random =
         stations[Math.floor(Math.random() * stations.length)];

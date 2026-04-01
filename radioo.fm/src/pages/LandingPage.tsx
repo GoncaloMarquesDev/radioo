@@ -1,6 +1,10 @@
+import BottomNav from "../components/bottomnav/BottomNav";
 import CategoryPills from "../components/categorypills/CategoryPills";
 import FeatureStation from "../components/featurestation/FeatureStation";
 import Header from "../components/header/Header";
+import RadioListFromPills from "../components/radiolistfrompills/RadioListFromPills";
+
+
 import TopBar from "../components/topbar/TopBar";
 import "./LandingPage.scss";
 
@@ -12,6 +16,9 @@ function landingpage() {
       <Header/>
       <FeatureStation/>
       <CategoryPills/>
+      <RadioListFromPills/>
+      <BottomNav/>
+     
       
     </div>
   );

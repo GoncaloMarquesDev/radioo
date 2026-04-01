@@ -8,7 +8,7 @@
   padding: 6px 16px;
   border-radius: 50px;
   
-  // Quando NÃO está selecionado
+  // Quando n está selecionado
   background-color: rgba(255, 255, 255, 0.05); 
   color: #a0a0a0; 
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -18,7 +18,7 @@
   white-space: nowrap; 
   transition: all 0.2s ease; 
 
-  // Quando clicas e  adiciona a classe .active)
+  // onclik adiciona a classe active)
   &.active {
     background-color: $color-primary; 
     color: white; 
