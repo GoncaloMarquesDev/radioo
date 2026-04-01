@@ -1,23 +1,25 @@
 // src/components/CategoryPills/CategoryPills.tsx
-import  { useState } from "react";
+/* import  { useState } from "react"; */
 import CategoryPill from "../categorypill/CategoryPill";
-import { CATEGORIES } from "../../constants/categories"; // impoort as categorias
+import { CATEGORIES } from "../../constants/categories"; 
+import { useRadio } from "../../context/RadioContext"; //n esquecer imporatar o context
 import "./CategoryPills.scss";
 
 function CategoryPills() {
-  const [activeId, setActiveId] = useState("all");
+  /* const [activeId, setActiveId] = useState("all");  --com o context agora deixa de ser necessario*/
+  const { selectedTag, setSelectedTag } = useRadio();
 
   return (
-    <div className="wrapper-category-pills"> 
+    <div className="wrapper-category-pills">
       <p className="pills-title">Browse Categories</p>
       <div className="category-pills-container">
         {CATEGORIES.map((cat) => (
-          <CategoryPill 
+          <CategoryPill
             key={cat.id}
             label={cat.name}
             icon={cat.icon}
-            isActive={activeId === cat.id}
-            onClick={() => setActiveId(cat.id)}
+            isActive={selectedTag === cat.id}
+            onClick={() => setSelectedTag(cat.id)}
           />
         ))}
       </div>
