@@ -11,16 +11,13 @@
 }
 .category-pills-container {
   display: flex;
-  gap: 10px;
-
-  width: 100%; 
-  max-width: 90vw; 
-  overflow-x: auto; 
-
-  padding: 16px 0 0 8px;
-
-  // Limpeza visual
+  gap: 5px;
+  width: 100%;
+  max-width: 95vw;
+  overflow-x: auto;
+  padding: 16px 0 0 16px;
   scrollbar-width: none;
+  
   &::-webkit-scrollbar {
     display: none;
   }

@@ -46,3 +46,8 @@
   line-height: 1;
 
 }
+@mixin text-btn-load {
+  font-family: $font-heading;
+  font-size: 12px;
+  line-height: 1.6;
+}

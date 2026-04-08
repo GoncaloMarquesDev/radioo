@@ -4,12 +4,12 @@
 .wrapper-pill {
   display: flex;
   align-items: center;
-  gap: 8px; 
-  padding: 6px 16px;
+  gap: 2px; 
+  padding: 4px 12px;
   border-radius: 50px;
   
   // Quando n está selecionado
-  background-color: rgba(255, 255, 255, 0.05); 
+   background-color: rgba(107, 110, 116, 0.3); 
   color: #a0a0a0; 
   border: 1px solid rgba(255, 255, 255, 0.1);
   
@@ -18,7 +18,7 @@
   white-space: nowrap; 
   transition: all 0.2s ease; 
 
-  // onclik adiciona a classe active)
+  // onclik adiciona a classe active
   &.active {
     background-color: $color-primary; 
     color: white; 
@@ -27,7 +27,7 @@
   }
 
   &:hover:not(.active) {
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(128, 128, 128, 0.1); 
   }
 
   .pill-icon {

@@ -1,4 +1,3 @@
-import BottomNav from "../components/bottomnav/BottomNav";
 import CategoryPills from "../components/categorypills/CategoryPills";
 import FeatureStation from "../components/featurestation/FeatureStation";
 import Header from "../components/header/Header";
@@ -17,7 +16,8 @@ function landingpage() {
       <FeatureStation/>
       <CategoryPills/>
       <RadioListFromPills/>
-      <BottomNav/>
+     
+      {/* <BottomNav/> */}
      
       
     </div>
