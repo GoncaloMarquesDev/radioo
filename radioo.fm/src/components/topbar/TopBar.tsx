@@ -1,8 +1,11 @@
 import "./TopBar.scss";
 import { IoRadioOutline } from "react-icons/io5";
 import { PiBellSimpleThin } from "react-icons/pi";
+import { useRadio } from "../../context/RadioContext";
 
 function TopBar() {
+   const { searchQuery, setSearchQuery } = useRadio();
+  
   return (
     <header className="topbar">
       <div className="nav">
@@ -22,6 +25,8 @@ function TopBar() {
           type="text"
           className="search"
           placeholder=" Search Station ..."
+           value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
 
         <button className="icon-right">

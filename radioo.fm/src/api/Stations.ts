@@ -1,19 +1,45 @@
 import type { Station } from "../types/station";
 const BASE_URL = "https://de1.api.radio-browser.info/json";
 
-
 export async function getTopStations(limit: number = 50): Promise<Station[]> {
-  // Este endpoint traz as rádios mais votadas de toda a base de dados
-  const res = await fetch(`${BASE_URL}/stations/topvote?limit=${limit}&hidebroken=true`);
+  // endpoint rádios mais votadas
+  const res = await fetch(
+    `${BASE_URL}/stations/topvote?limit=${limit}&hidebroken=true`,
+  );
   return res.json();
 }
-
-
 
 export async function getStationsByTag(tag: string): Promise<Station[]> {
   const res = await fetch(`${BASE_URL}/stations/bytag/${tag}?limit=50`);
 
   return res.json();
-
-
 }
+
+// funcao para pesquisa
+export async function searchStationsByName(
+  name: string,
+  limit: number = 50,
+): Promise<Station[]> {
+  if (!name.trim()) return [];
+
+  // endpoint 'byname' da API
+  const res = await fetch(
+    `${BASE_URL}/stations/byname/${encodeURIComponent(name)}?limit=${limit}&hidebroken=true&order=votes&reverse=true`,
+  );
+
+  return res.json();
+}
+export const getApiStats = async () => {
+  try {
+    const res = await fetch(`${BASE_URL}/stats`);
+
+    if (!res.ok) return null;
+
+    const data = await res.json();
+
+    return data.stations;
+  } catch (error) {
+    console.error("Erro ao carregar estatísticas:", error);
+    return null;
+  }
+};

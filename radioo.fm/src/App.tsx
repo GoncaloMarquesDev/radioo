@@ -2,14 +2,15 @@ import "./App.css";
 import "./styles/main.scss";
 import LandingPage from "./pages/LandingPage";
 import { RadioProvider } from "./context/RadioContext";
-import AudioEngine from "./components/audioengine/AudioEngine";
+
+import AudioPlayer from "./components/audioplayer/AudioPlayer";
 const App = () => {
   return (
     <RadioProvider>
       <div>
         <LandingPage />
       </div>
-      <AudioEngine/>
+      <AudioPlayer/>
     </RadioProvider>
   );
 };
