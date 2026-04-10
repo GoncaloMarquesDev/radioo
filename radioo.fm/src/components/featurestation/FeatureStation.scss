@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .container-banner {
-  margin-left: 8px;
+  margin-left: 16px;
 }
 
 .container-feature-banner {
@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 350px;
-  padding-top: 8px;
+  width: 340px;
+  padding-top: 16px;
   padding-left: 16px;
   border-radius: 20px;
   background-image:
@@ -32,6 +32,15 @@
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
 
   overflow: visible;
+
+  @include tablet {
+    width: 700px;
+    height: 200px;
+    justify-content: center;
+    box-shadow:
+      0 30px 80px rgba(59, 130, 246, 0.3),
+      0 -30px 80px rgba(59, 130, 246, 0.3);
+  }
 }
 .bottom-info {
   display: flex;
@@ -47,7 +56,7 @@
 }
 .station-name {
   @include header-title;
-  padding-top: 8px;
+  padding-top: 16px; /* verificar se n fica  mt espaçado */
   padding-left: 8px;
 }
 .station-country {
@@ -68,6 +77,10 @@
 }
 .bottom-info-right {
   padding-right: 18px;
+
+  @include tablet {
+    padding-right: 32px;
+  }
 }
 .radioo-play-btn {
   @include text-btn;

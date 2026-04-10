@@ -6,14 +6,16 @@ const RadioContext = createContext<RadioContextType | undefined>(undefined);
 
 export function RadioProvider({ children }: { children: ReactNode }) {
 
-  
+  const [activeColor, setActiveColor] = useState<string>("59, 130, 246");
+
   const [selectedTag, setSelectedTag] = useState("all"); 
 
   const [currentStation,setCurrentStation]=  useState<Station |  null> ( null);
 
-  const playStation = (station:Station)=>{
-    setCurrentStation(station);
-  };
+ const playStation = (station: Station, color: string) => {
+  setCurrentStation(station);
+  setActiveColor(color); 
+};
 
 
   const [favorites, setFavorites] = useState<Station[]>(() => {
@@ -42,7 +44,7 @@ const toggleFavorite = (station: Station) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <RadioContext.Provider value={{ selectedTag, setSelectedTag,currentStation, playStation,
+    <RadioContext.Provider value={{ selectedTag, setSelectedTag,currentStation, activeColor, playStation,
      searchQuery, setSearchQuery, favorites, toggleFavorite }}>
       {children}
     </RadioContext.Provider>

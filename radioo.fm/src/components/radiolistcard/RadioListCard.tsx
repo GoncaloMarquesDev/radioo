@@ -74,8 +74,8 @@ function RadioListCard({ station }: RadioListCardProps) {
   return (
     <button
       style={{ "--accent-color": `rgb(${accentColor})` } as React.CSSProperties}
-      className={`wrapper-radio-card ${isPlaying ? "is-playing" : ""}`}
-      onClick={() => playStation(station)}
+  className={`wrapper-radio-card ${isPlaying ? "is-playing" : ""}`}
+  onClick={() => playStation(station, accentColor)}
     >
       <div style={imgRadio} className="top-radio-card"></div>
 

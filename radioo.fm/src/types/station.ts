@@ -15,9 +15,10 @@ export interface RadioContextType {
   selectedTag: string;
   setSelectedTag: (tag: string) => void;
   currentStation: Station | null;
-  playStation: (station: Station) => void;
+   playStation: (station: Station, color: string) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   favorites: Station[];
   toggleFavorite: (station: Station) => void;
+  activeColor: string; 
 }
