@@ -9,13 +9,14 @@
   cursor: pointer;
   display: block;
   width: 150px;
-  margin-bottom: 20px;
   transition: transform 0.2s ease;
 
   &:hover {
     transform: translateY(-5px);
   }
-
+ @include tablet {
+   width: 160px;
+  }
 }
 .wrapper-radio-card.is-playing {
   box-shadow: 0 0 12px var(--accent-color);
@@ -24,6 +25,10 @@
   width: 100%;
   height: 140px;
   border-radius: 20px 20px 0 0;
+  
+  @include tablet {
+   height: 160px;
+  }
 }
 
 .bottom-radio-card {

@@ -1,11 +1,14 @@
 import "./TopBar.scss";
-import { IoRadioOutline } from "react-icons/io5";
-import { PiBellSimpleThin } from "react-icons/pi";
+import { IoClose, IoRadioOutline } from "react-icons/io5";
 import { useRadio } from "../../context/RadioContext";
 
 function TopBar() {
-   const { searchQuery, setSearchQuery } = useRadio();
-  
+  const { searchQuery, setSearchQuery } = useRadio();
+
+  const handleClear = () => {
+    setSearchQuery(""); //apaga o texto
+  };
+
   return (
     <header className="topbar">
       <div className="nav">
@@ -20,18 +23,20 @@ function TopBar() {
             RADIOO<span className="fm">FM</span>
           </div>
         </div>
-
-        <input
-          type="text"
-          className="search"
-          placeholder=" Search Station ..."
-           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-
-        <button className="icon-right">
-          <PiBellSimpleThin className="icon-bell" />
-        </button>
+        <div className="search-wrapper">
+          <input
+            type="text"
+            className="search"
+            placeholder=" Search Station ..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          {searchQuery && (
+            <button className="clear-btn" onClick={handleClear}>
+              <IoClose />
+            </button>
+          )}
+        </div>
       </div>
     </header>
   );

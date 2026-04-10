@@ -1,10 +1,36 @@
 @use "variables" as *;
 
+$tablet:768px;
+$desktop:1024px;
+$wide:1440px;
+
+@mixin tablet{
+  @media(min-width:#{$tablet}){
+    @content;
+  }
+}
+@mixin desktop{
+  @media(min-width:#{$desktop}){
+    @content;
+  }
+}
+@mixin wide{
+  @media(min-width:#{$wide}){
+    @content;
+  }
+}
+
+
 @mixin heading-xl {
   font-family: $font-heading;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
+}
+@mixin heading-topbar {
+  font-family: $font-heading;
+  font-size: 22px;
+  line-height: 1.6;
 }
 
 @mixin heading-lg {
