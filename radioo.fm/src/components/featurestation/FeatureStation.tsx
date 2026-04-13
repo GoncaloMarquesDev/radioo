@@ -65,7 +65,8 @@ function FeatureStation() {
           <div className="bottom-info-right">
             <button
               className="radioo-play-btn"
-              onClick={() => station && playStation(station,bannerColor )}
+              /* onClick={() => station && playStation(station,bannerColor )} */
+              onClick={() => playStation(station, bannerColor)}
             >
               <CiPlay1 className="icon-play-now" /> Play Now
             </button>
