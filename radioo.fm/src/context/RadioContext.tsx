@@ -12,9 +12,14 @@ export function RadioProvider({ children }: { children: ReactNode }) {
 
   const [currentStation,setCurrentStation]=  useState<Station |  null> ( null);
 
- const playStation = (station: Station, color: string) => {
+/*  const playStation = (station: Station, color: string) => {
   setCurrentStation(station);
   setActiveColor(color); 
+}; */
+
+const playStation = (station: Station, color?: string) => {
+  setCurrentStation(station);
+  if (color) setActiveColor(color);
 };
 
 
