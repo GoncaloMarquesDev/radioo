@@ -6,13 +6,10 @@ import "../../types/station";
 import { useRadio } from "../../context/RadioContext";
 import { DEFAULT_RADIO_IMG } from "../../constants/images";
 
-
 function FeatureStation() {
-  const bannerColor = "59, 130, 246"; 
-  const { playStation,searchQuery } = useRadio();
+  const bannerColor = "59, 130, 246";
+  const { playStation, searchQuery } = useRadio();
   const station = useFeaturedStation();
-
-
 
   if (!station) {
     return (
@@ -43,15 +40,16 @@ function FeatureStation() {
 
   const displayTags = station.tags
     ? station.tags.split(",").slice(0, 2).join(" • ")
-    : "No tags available";;
+    : "No tags available";
 
- if (searchQuery.length > 0) return null;
+  if (searchQuery.length > 0) return null;
 
- 
   return (
     <div className="container-banner">
       <div style={bannerStyle} className="container-feature-banner">
-        <div className="live-badge"><span className="pulse-dot"></span>Featured Station</div>
+        <div className="live-badge">
+          <span className="pulse-dot"></span>Featured Station
+        </div>
 
         <p className="station-name">{station.name}</p>
         <p className="station-country">{station.countrycode}</p>
@@ -65,8 +63,8 @@ function FeatureStation() {
           <div className="bottom-info-right">
             <button
               className="radioo-play-btn"
-              /* onClick={() => station && playStation(station,bannerColor )} */
-              onClick={() => playStation(station, bannerColor)}
+              onClick={() => station && playStation(station, bannerColor)}
+              /* onClick={() => playStation(station, bannerColor)} */
             >
               <CiPlay1 className="icon-play-now" /> Play Now
             </button>
