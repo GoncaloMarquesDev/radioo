@@ -8,11 +8,11 @@ import { DEFAULT_RADIO_IMG } from "../../constants/images";
 
 
 function FeatureStation() {
-  
-  const { playStation } = useRadio();
-  const { searchQuery }=useRadio();
+  const bannerColor = "59, 130, 246"; 
+  const { playStation,searchQuery } = useRadio();
   const station = useFeaturedStation();
-  /*  const audioRef = React.useRef<HTMLAudioElement | null>(null); */
+
+
 
   if (!station) {
     return (
@@ -43,22 +43,11 @@ function FeatureStation() {
 
   const displayTags = station.tags
     ? station.tags.split(",").slice(0, 2).join(" • ")
-    : "No tags available";
-  console.log("station", station);
+    : "No tags available";;
 
-  /* funcao para a criacao do player  */
-  /*  const handlePlay = () => {
-    if (!station?.url_resolved) return;
+ if (searchQuery.length > 0) return null;
 
-    if(audioRef.current){
-      audioRef.current.pause();
-    }
-    const audio = new Audio(station.url_resolved);
-    audioRef.current=audio;
-    audio.play().catch(err=>console.error("Play Error", err));
-  
-  }; */
- if (searchQuery.length > 0 || !station) return null;
+ 
   return (
     <div className="container-banner">
       <div style={bannerStyle} className="container-feature-banner">
@@ -76,7 +65,7 @@ function FeatureStation() {
           <div className="bottom-info-right">
             <button
               className="radioo-play-btn"
-              onClick={() => station && playStation(station)}
+              onClick={() => station && playStation(station,bannerColor )}
             >
               <CiPlay1 className="icon-play-now" /> Play Now
             </button>
