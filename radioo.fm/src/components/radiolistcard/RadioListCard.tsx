@@ -24,14 +24,24 @@ function RadioListCard({ station }: RadioListCardProps) {
 
   // ✅ CORES
   const colors = [
-    "137, 200, 21",
-    "59, 130, 246",
-    "231, 76, 60",
-    "155, 89, 182",
-    "241, 196, 15",
+    "0, 255, 198", // aqua neon
+    "0, 180, 255", // electric blue
+    "120, 80, 255", // purple neon
+    "30, 215, 96", // green spotify style
+    "0, 210, 255", // cyan
+    "180, 0, 255", // cyber purple
+    "255, 140, 0", // orange
+    "255, 70, 70", // warm red
+    "90, 200, 250", // sky blue
+    "140, 255, 140", // soft green
+    "255, 180, 90", // warm amber
+    "0, 120, 255", // deep blue
+    "255, 0, 120", // hot pink
+    "100, 255, 220", // mint cyan
+    "170, 170, 255", // soft indigo
   ];
 
-  // ✅ GERAR COR CONSISTENTE E VARIADA
+  // gera uma cor random
   const colorIndex =
     station.stationuuid
       .split("")
@@ -39,7 +49,7 @@ function RadioListCard({ station }: RadioListCardProps) {
 
   const accentColor = colors[colorIndex];
 
-  // ✅ VALIDAR IMAGEM
+  // VALIDA A IMAGEM
   useEffect(() => {
     if (station.favicon) {
       const img = new Image();
@@ -55,38 +65,38 @@ function RadioListCard({ station }: RadioListCardProps) {
     ? station.name.split(" ").slice(0, 3).join(" ")
     : "Radio";
 
-  // ✅ STYLE FINAL (GRADIENT + IMAGEM)
-  const imgRadio = {
+  // STYLE FINAL(gradient e  a imagem)
+  const imgRadio: React.CSSProperties = {
     backgroundImage: `
     linear-gradient(
-  to top,
-  rgba(${accentColor}, 1) 0%,
-  rgba(${accentColor}, 0.4) 30%,
-  rgba(${accentColor}, 0.3) 50%,
-  rgba(${accentColor}, 0) 100%
-),
+      to top,
+      rgba(${accentColor}, 0.85),
+      rgba(${accentColor}, 0.4),
+      rgba(${accentColor}, 0.1),
+      transparent
+    ),
     url("${currentImg}")
   `,
     backgroundSize: "cover",
     backgroundPosition: "center",
-  } as React.CSSProperties;
+  };
 
   return (
     <button
       style={{ "--accent-color": `rgb(${accentColor})` } as React.CSSProperties}
-  className={`wrapper-radio-card ${isPlaying ? "is-playing" : ""}`}
-  onClick={() => playStation(station, accentColor)}
+      className={`wrapper-radio-card ${isPlaying ? "is-playing" : ""}`}
+      onClick={() => playStation(station, accentColor)}
     >
       <div style={imgRadio} className="top-radio-card"></div>
 
       <div className="bottom-radio-card">
+        <div className=""></div>
         <p className="station-title">{shortName}</p>
         <p>{station.bitrate} kbps</p>
 
         <div className="bottom-votes">
           <p>{station.votes} Votes</p>
 
-          {/* ✅ CORRIGIDO: div em vez de button */}
           <div
             className={`fav-button ${isFavorite ? "is-fav" : ""}`}
             onClick={(e) => {

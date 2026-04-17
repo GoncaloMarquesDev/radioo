@@ -5,6 +5,7 @@ import RadioListCard from "../radiolistcard/RadioListCard";
 import { useRadio } from "../../context/RadioContext";
 import "./RadioListFromPills.scss";
 import { LuRadio } from "react-icons/lu";
+import { getTrendingStations } from "../../api/Stations";
 
 function RadioListFromPills() {
   const [visibleCount, setVisibleCount] = useState(10);
@@ -12,7 +13,7 @@ function RadioListFromPills() {
   const [stations, setStations] = useState<Station[]>([]);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 10);
+    setVisibleCount((prev) => prev + 10); 
   };
 
   useEffect(() => {
@@ -21,9 +22,15 @@ function RadioListFromPills() {
       if (searchQuery.trim().length > 2) {
         const results = await searchStationsByName(searchQuery);
         setStations(results);
-      } else if (selectedTag === "favorites") {
+      } 
+       else if (selectedTag === "trending") {
+      const data = await getTrendingStations(24);
+      setStations(data);
+    } 
+      else if (selectedTag === "favorites") {
         // Confirma se o ID na Pill é "favorite"
         setStations(favorites);
+        
       } else {
         const results = await getStationsByTag(selectedTag);
         setStations(results);

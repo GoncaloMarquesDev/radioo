@@ -8,7 +8,7 @@ function Header (){
 
     const [totalStations, setTotalStations] = useState<number | null>(null);
     const [getGreeting, setGreeting]=useState("");
-  /*   console.log("saudacao", getGreeting); */
+ 
 
 
     useEffect(() => {
@@ -24,9 +24,7 @@ function Header (){
 
     getApiStats().then(setTotalStations);
   }, []);
-  /* console.log("live radios", totalStations) */
-
-
+ 
     return(
         <div className="container-header-title">
 <h6 className="greeting">{getGreeting} <FaHandsClapping  className="clap"/> </h6>

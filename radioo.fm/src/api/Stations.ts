@@ -39,7 +39,22 @@ export const getApiStats = async () => {
 
     return data.stations;
   } catch (error) {
-    console.error("Erro ao carregar estatísticas:", error);
+    console.error("Error loading statistics:", error);
     return null;
+  }
+};
+
+export const getTrendingStations = async (limit = 20): Promise<Station[]> => {
+  try {
+    const response = await fetch(
+      `https://de1.api.radio-browser.info/json/stations/topvote?limit=${limit}`,
+    );
+
+    if (!response.ok) throw new Error("Error loading trend");
+
+    return await response.json();
+  } catch (error) {
+    console.error("Trending API Error", error);
+    return [];
   }
 };

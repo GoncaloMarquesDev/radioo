@@ -22,4 +22,10 @@ export interface RadioContextType {
   favorites: Station[];
   toggleFavorite: (station: Station) => void;
   activeColor: string; 
+  stations:Station[];
+  topStations:Station[];
+}
+export interface SidebarStationCardProps {
+  station: Station;
+  
 }

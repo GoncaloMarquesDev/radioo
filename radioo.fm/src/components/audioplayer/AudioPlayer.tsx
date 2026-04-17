@@ -45,7 +45,7 @@ function AudioPlayer() {
         });
       }
 
-      // Lógica da Imagem (Fallback)
+      // Lógica da imagem (Fallback)
       if (currentStation.favicon && currentStation.favicon.trim() !== "") {
         const img = new Image();
         img.src = currentStation.favicon;
@@ -80,7 +80,7 @@ function AudioPlayer() {
       <div
         className="neon-line"
       style={{
-    // Injetamos a cor pura na variável para o box-shadow usar
+    // aqui injecto a cor  na variável para o box-shadow usar
     "--neon-color": `rgba(${activeColor}, 0.8)`, 
     background: `linear-gradient(
       90deg,
@@ -97,7 +97,7 @@ function AudioPlayer() {
           <div className="text">
             <p
               className="station-title"
-              style={{ color: `rgb(${activeColor})` }}
+              /* style={{ color: `rgb(${activeColor})` }} */ //veruificar se é para manter
             >
               {shortName}
             </p>

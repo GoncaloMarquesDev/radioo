@@ -1,3 +1,3 @@
 // usar constant como imagem
 export const DEFAULT_RADIO_IMG =
-  "https://images.unsplash.com/photo-1616709062048-788acece6a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljJTIwbXVzaWMlMjBuZW9uJTIwbGlnaHRzfGVufDF8fHx8MTc3MjgwNTI5MHww&ixlib=rb-4.1.0&q=80&w=1080";
+  "https://plus.unsplash.com/premium_photo-1673722097701-9fe828f22bd9?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
