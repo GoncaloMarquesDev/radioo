@@ -1,0 +1,50 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+ 
+}
+.icon-radioo {
+  background-color: #3b82f6;
+  border-radius: 50%;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+  @include tablet {
+    border-radius: 30%;
+    padding: 8px;
+  }
+}
+.icon-radio {
+  color: white;
+  font-size: large;
+  border: none;
+
+  @include tablet {
+    font-size: x-large;
+  }
+    @include desktop {
+    font-size: 40px;
+  }
+}
+.radioo-text {
+  @include header-title;
+  color: $color-primary;
+ 
+    @include tablet {
+      @include heading-topbar;
+  }
+   @include desktop {
+      @include heading-topbar-desktop;
+  }
+}
+.fm {
+  color: white;
+}

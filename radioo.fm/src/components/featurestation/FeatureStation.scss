@@ -26,11 +26,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   transition: background-image 0.1s ease-in-out;
-
   box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-
   overflow: visible;
 
   @include tablet {
@@ -38,8 +35,25 @@
     height: 200px;
     justify-content: center;
     box-shadow:
-      0 30px 80px rgba(59, 130, 246, 0.3),
-      0 -30px 80px rgba(59, 130, 246, 0.3);
+      0 90px 100px -90px rgba(59, 130, 246, 0.4),
+      // Brilho para Baixo
+      0 -90px 100px -90px rgba(59, 130, 246, 0.4); // Brilho para Cima
+  }
+  @include desktop {
+    width: 95%;
+    height: 300px;
+
+    background-image:
+      linear-gradient(
+        to top,
+        rgba(12, 15, 26, 1) 0%,
+        rgba(12, 15, 26, 0.6) 50%,
+        rgba(12, 15, 26, 0) 100%
+      ),
+      var(--bg-image);
+
+    background-size: cover;
+    background-position: center;
   }
 }
 .bottom-info {
@@ -58,22 +72,41 @@
   @include header-title;
   padding-top: 16px; /* verificar se n fica  mt espaçado */
   padding-left: 8px;
+ @include tablet {
+    @include heading-topbar-desktop;
+    font-weight: bolder;
+  }
+  @include desktop {
+    @include heading-xl;
+    font-weight: bolder;
+  }
 }
 .station-country {
   @include body-s;
   padding-left: 8px;
   color: rgb(160, 160, 160);
+  @include desktop {
+    @include body-lg;
+  }
 }
 .radioo-tags {
   padding-left: 8px;
   @include body-s;
   color: $color-primary;
   padding-top: 16px;
+  @include desktop {
+    @include body-xlg;
+  }
 }
 .radioo-votes {
   padding-left: 8px;
+
   @include body-s;
   padding-bottom: 16px;
+
+  @include desktop {
+    @include body-lg;
+  }
 }
 .bottom-info-right {
   padding-right: 18px;
@@ -94,20 +127,25 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   font-weight: 600;
-
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(149, 144, 144, 0.4);
   backdrop-filter: blur(10px);
 
   transition: all 0.3s ease;
+  @include desktop {
+    @include body-lg;
+  }
 
   &:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: #6366f1;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
   svg {
     font-size: 1.2rem;
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 }
 

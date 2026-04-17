@@ -1,35 +1,51 @@
 @use "variables" as *;
 
-$tablet:768px;
-$desktop:1024px;
-$wide:1440px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1440px;
 
-@mixin tablet{
-  @media(min-width:#{$tablet}){
+@mixin tablet {
+  @media (min-width:#{$tablet}) {
     @content;
   }
 }
-@mixin desktop{
-  @media(min-width:#{$desktop}){
+@mixin desktop {
+  @media (min-width:#{$desktop}) {
     @content;
   }
 }
-@mixin wide{
-  @media(min-width:#{$wide}){
+@mixin wide {
+  @media (min-width:#{$wide}) {
     @content;
   }
 }
-
-
-@mixin heading-xl {
+@mixin text-btn-load {
   font-family: $font-heading;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 12px;
+  line-height: 1.6;
 }
+
+@mixin header-title {
+  font-family: $font-heading;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+@mixin heading-m {
+  font-family: $font-heading;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 @mixin heading-topbar {
   font-family: $font-heading;
   font-size: 22px;
+  line-height: 1.6;
+}
+
+@mixin heading-topbar-desktop {
+  font-family: $font-heading;
+  font-size: 32px;
   line-height: 1.6;
 }
 
@@ -40,13 +56,28 @@ $wide:1440px;
   line-height: 1.2;
 }
 
+@mixin heading-xl {
+  font-family: $font-heading;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+
+
 @mixin body-lg {
   font-family: $font-primary;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
 }
-
+@mixin body-xlg {
+  font-family: $font-primary;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+}
 @mixin body-md {
   font-family: $font-primary;
   font-size: 16px;
@@ -65,15 +96,17 @@ $wide:1440px;
   line-height: 1.6;
 }
 
-@mixin header-title{
-  font-family: $font-heading;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1;
-
-}
-@mixin text-btn-load {
-  font-family: $font-heading;
-  font-size: 12px;
+@mixin title-l {
+  font-family: $font-primary;
+  font-size: 22px;
+  font-weight: 400;
   line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+@mixin sidebar-m {
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
 }

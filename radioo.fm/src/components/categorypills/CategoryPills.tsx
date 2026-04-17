@@ -1,12 +1,11 @@
 // src/components/CategoryPills/CategoryPills.tsx
 /* import  { useState } from "react"; */
 import CategoryPill from "../categorypill/CategoryPill";
-import { CATEGORIES } from "../../constants/categories"; 
+import { CATEGORIES } from "../../constants/categories";
 import { useRadio } from "../../context/RadioContext"; //n esquecer imporatar o context
 import "./CategoryPills.scss";
 
 function CategoryPills() {
-  /* const [activeId, setActiveId] = useState("all");  --com o context agora deixa de ser necessario*/
   const { selectedTag, setSelectedTag } = useRadio();
 
   return (

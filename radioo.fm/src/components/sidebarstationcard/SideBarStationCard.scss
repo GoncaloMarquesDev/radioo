@@ -1,0 +1,57 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.sidebar-station-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  @include sidebar-m;
+  color: #c5c7cb;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .img-container {
+    position: relative;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 25%;
+      object-fit: cover;
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid #0037ff;
+    }
+  }
+  .station-in {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .station-info {
+    .name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+    }
+    .genre {
+      font-weight: bold;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

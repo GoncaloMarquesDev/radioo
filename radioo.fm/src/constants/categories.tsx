@@ -16,7 +16,7 @@ export interface CategoryItem {
   tag: string;
   icon: React.ReactNode;
 }
-
+// Aqui defino o interface n  esquecer
 export const CATEGORIES: CategoryItem[] = [
   { id: "all", name: "All", tag: "", icon: <FaMusic /> },
   {

@@ -1,7 +1,7 @@
 import "./FeatureStation.scss";
 import { useFeaturedStation } from "../../hooks/useFeaturedStation";
 import { CiPlay1 } from "react-icons/ci";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../types/station";
 import { useRadio } from "../../context/RadioContext";
 import { DEFAULT_RADIO_IMG } from "../../constants/images";
@@ -10,6 +10,39 @@ function FeatureStation() {
   const bannerColor = "59, 130, 246";
   const { playStation, searchQuery } = useRadio();
   const station = useFeaturedStation();
+
+  const [currentImg, setCurrentImg] = useState(DEFAULT_RADIO_IMG);
+
+  useEffect(() => {
+    //versao melhorada q reage á mudanca de resolucao
+    if (!station) return;
+
+    const checkImage = () => {
+      const isDesktop = window.innerWidth >= 1024;
+
+      if (station.favicon) {
+        const img = new Image();
+        img.src = station.favicon;
+
+        img.onload = () => {
+          if (isDesktop && img.width < 200) {
+            setCurrentImg(DEFAULT_RADIO_IMG);
+          } else {
+            setCurrentImg(station.favicon);
+          }
+        };
+
+        img.onerror = () => setCurrentImg(DEFAULT_RADIO_IMG);
+      } else {
+        setCurrentImg(DEFAULT_RADIO_IMG);
+      }
+    };
+
+    checkImage();
+    window.addEventListener("resize", checkImage);
+
+    return () => window.removeEventListener("resize", checkImage);
+  }, [station]);
 
   if (!station) {
     return (
@@ -31,13 +64,6 @@ function FeatureStation() {
     );
   }
 
-  /* ------ */
-  const bannerStyle = {
-    "--bg-image": `url("${station.favicon || DEFAULT_RADIO_IMG}")`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  } as React.CSSProperties;
-
   const displayTags = station.tags
     ? station.tags.split(",").slice(0, 2).join(" • ")
     : "No tags available";
@@ -46,7 +72,10 @@ function FeatureStation() {
 
   return (
     <div className="container-banner">
-      <div style={bannerStyle} className="container-feature-banner">
+      <div
+        className="container-feature-banner"
+        style={{ "--bg-image": `url("${currentImg}")` } as React.CSSProperties}
+      >
         <div className="live-badge">
           <span className="pulse-dot"></span>Featured Station
         </div>
@@ -64,7 +93,6 @@ function FeatureStation() {
             <button
               className="radioo-play-btn"
               onClick={() => station && playStation(station, bannerColor)}
-              /* onClick={() => playStation(station, bannerColor)} */
             >
               <CiPlay1 className="icon-play-now" /> Play Now
             </button>
