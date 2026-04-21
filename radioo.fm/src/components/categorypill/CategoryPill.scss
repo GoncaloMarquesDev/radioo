@@ -4,31 +4,31 @@
 .wrapper-pill {
   display: flex;
   align-items: center;
-  gap: 2px; 
+  gap: 2px;
   padding: 4px 12px;
   border-radius: 50px;
   // Qando n está selecionado
-   background-color: rgba(107, 110, 116, 0.3); 
-  color: #a0a0a0; 
+  background-color: rgba(107, 110, 116, 0.3);
+  color: #a0a0a0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  flex-shrink: 0; 
-  white-space: nowrap; 
-  transition: all 0.2s ease; 
-  @include desktop{
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  @include desktop {
     padding: 4px 16px;
   }
 
   // onclik adiciona a classe active
   &.active {
-    background-color: $color-primary; 
-    color: white; 
+    background-color: $color-primary;
+    color: white;
     border-color: transparent;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); 
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 
   &:hover:not(.active) {
-    background-color: rgba(128, 128, 128, 0.1); 
+    background-color: rgba(128, 128, 128, 0.1);
   }
 
   .pill-icon {
@@ -37,7 +37,6 @@
   }
 }
 
-
 .pill-icon {
   color: rgb(189, 189, 189);
   padding-right: 10px;
@@ -45,7 +44,10 @@
 .pill-title {
   color: rgb(255, 255, 255);
   @include body-s;
-  @include desktop{
-    @include body-xlg;
+  @include desktop {
+    @include body-lg;
+  }
+  @include wide {
+    @include body-md;
   }
 }

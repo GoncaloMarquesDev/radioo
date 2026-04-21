@@ -3,16 +3,14 @@
 
 .container-header-title {
   padding-top: 16px;
-  padding-left: 16px;
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 100%;
   @include tablet {
-    padding: 16px 0 0 24px;
+    padding: 16px;
   }
   @include desktop {
-    padding: 32px 0 0 24px;
-    width: 95%; //verificar o width
+    padding: 32px 0 0 32px;
   }
 }
 .greeting {
@@ -42,18 +40,18 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .listen {
   @include header-title;
-  max-width: 180px;
+  flex: 1;
   text-align: left;
 
   @include tablet {
-    max-width: 100%;
     font-size: 22px;
   }
   @include desktop {
-    max-width: 100%;
     font-size: 32px;
   }
 }
@@ -63,10 +61,14 @@
   align-items: center;
   padding: 4px 14px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 10px;
   color: #60a5fa;
   background: rgba(59, 130, 246, 0.15);
   border: 1px solid rgba(59, 130, 246, 0.3);
+  @include tablet {
+    font-size: 12px;
+    padding: 4px 18px;
+  }
   @include desktop {
     font-size: 18px;
     padding: 4px 18px;
