@@ -2,6 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .wrapper-radio-card {
+  max-width: clamp(240px, 25vw, 300px);
   background: none;
   border: 2px solid transparent;
   border-radius: 40px;
@@ -13,11 +14,6 @@
   transition: transform 0.2s ease;
 
   overflow: hidden; // nao esquecer-- importante --- para o zoom da imagem não sair
-
-  // hover  faz zoom só na imagem de cima
-  &:hover {
-    transform: translateY(-0px); //  reduz o parecer q cresce para baixo
-  }
 
   &:hover .top-radio-card {
     transform: scale(1.04) translateY(-4px); // compensa o crescimento
@@ -103,9 +99,6 @@
 }
 
 .fav-button {
-  position: absolute;
-  top: -20px;
-  right: -10px;
   width: 50px;
   border-radius: 50%;
   backdrop-filter: blur(8px);

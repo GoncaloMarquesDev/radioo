@@ -13,12 +13,13 @@ function landingpage() {
       <SideBar />
       <div className="main-viewport">
         <TopBar />
-
-        <div className="content-scroll">
-          <Header />
-          <FeatureStation />
-          <CategoryPills />
-          <RadioListFromPills />
+        <div className="content-container">
+          <div className="content-scroll">
+            <Header />
+            <FeatureStation />
+            <CategoryPills />
+            <RadioListFromPills />
+          </div>
         </div>
       </div>
     </div>

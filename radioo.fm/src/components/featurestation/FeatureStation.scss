@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 
 .container-banner {
-  margin-left: 16px;
+  width: 100%;
 }
 
 .container-feature-banner {
@@ -10,7 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 340px;
+
+  width: 100%;
+
   padding-top: 16px;
   padding-left: 16px;
   border-radius: 20px;
@@ -31,7 +33,7 @@
   overflow: visible;
 
   @include tablet {
-    width: 700px;
+    width: 100%;
     height: 200px;
     justify-content: center;
     box-shadow:
@@ -40,7 +42,7 @@
       0 -90px 100px -90px rgba(59, 130, 246, 0.4); // Brilho para Cima
   }
   @include desktop {
-    width: 95%;
+    width: 100%;
     height: 300px;
 
     background-image:
@@ -72,7 +74,7 @@
   @include header-title;
   padding-top: 16px; /* verificar se n fica  mt espaçado */
   padding-left: 8px;
- @include tablet {
+  @include tablet {
     @include heading-topbar-desktop;
     font-weight: bolder;
   }
