@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   text-align: left; /* 👈 MUITO IMPORTANTE: Remove o 'center' */
+  
 }
 
 /* Garante que o layout flexível ocupa  o espaço todo */
