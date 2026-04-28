@@ -7,6 +7,9 @@
   .station-header {
     @include title-l;
     color: #475569;
+    @include wide {
+  @include sidebar-m;
+  }
   }
 
   @include desktop {
@@ -20,6 +23,7 @@
     padding: 32px;
     z-index: 100;
   }
+   
 
   .sidebar-header {
     margin-bottom: 32px;
@@ -36,8 +40,10 @@
     border: none;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 18px;
     @include title-l;
+    @include wide{
+      @include sidebar-m;
+    }
 
     &.active {
       background: rgba(59, 130, 246, 0.1);

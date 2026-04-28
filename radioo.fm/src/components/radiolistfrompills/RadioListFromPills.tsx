@@ -59,13 +59,13 @@ function RadioListFromPills() {
           ))}
         </div>
       )}
-
-      {/* Btn Load More - só é visivel se não estiver nos favoritos e houver mais para carregar */}
+<div className="load-more-container"> {/* Btn Load More - só é visivel se não estiver nos favoritos e houver mais para carregar */}
       {selectedTag !== "favorites" && visibleCount < stations.length && (
         <button className="load-more-btn" onClick={handleLoadMore}>
           Discover More Stations
         </button>
-      )}
+      )}</div>
+     
     </div>
   );
 
