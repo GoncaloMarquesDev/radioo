@@ -92,8 +92,22 @@ function AudioPlayer() {
       />
 
       <div className="player-content">
-        <div className="station-meta">
+        <div className="station-meta" >
+          <div className="image-wrapper" style={{
+    // aqui injecto a cor  na variável para o box-shadow usar
+    "--neon-color": `rgba(${activeColor}, 0.8)`, 
+   
+  } as React.CSSProperties}>
           <img src={currentImg} alt={currentStation.name} />
+            {isPlaying && (
+    <div className="equalizer">
+      <span></span>
+      <span></span>
+      <span></span>
+      </div>
+     )}
+    </div>
+ 
           <div className="text">
             <p
               className="station-title"

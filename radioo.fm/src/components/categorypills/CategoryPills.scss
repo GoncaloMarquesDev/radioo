@@ -1,6 +1,8 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
+
+
 .pills-title {
   @include header-title;
   margin-top: 16px;

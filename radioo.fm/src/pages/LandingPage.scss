@@ -7,11 +7,13 @@
   height: 100vh;
   overflow: hidden;
 
+
   .content-container {
     max-width: 1800px;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
+    padding-bottom: calc(var(--player-height) + 20px);
     @include desktop {
       margin: 0 0;
       padding: 0 24px;
@@ -22,14 +24,12 @@
     flex: 1; // IMPORTANTE cresce para ocupar o espaço disponivel
     display: flex;
     flex-direction: column;
-
     overflow-y: auto;
-
     background-color: rgba(12, 15, 26, 0.8);
     backdrop-filter: blur(10px);
-
     scroll-behavior: smooth;
 
+    
     &::-webkit-scrollbar {
       width: 6px;
     }
