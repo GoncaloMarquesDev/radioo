@@ -23,10 +23,12 @@ Built with a mobile-first approach, Radioo focuses on performance and user exper
 ❌ Error handling for API requests
 
 ## 🛠️ Tech Stack
-React (Hooks, Functional Components)
+React (Hooks, Functional Components) with TypeScript(static typing)
 JavaScript (ES6+)
 REST API Integration (fetch / async-await)
 Context API (global state management)
+Local storage for data persistence
+Component-based architecture (reusable components)
 CSS / SASS (responsive & mobile-first design)
 Vercel (deployment)
 Git & GitHub (version control)
